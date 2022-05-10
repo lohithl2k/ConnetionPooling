@@ -7,68 +7,10 @@ import java.sql.SQLException;
 
 import org.apache.tomcat.dbcp.dbcp2.BasicDataSource;
 
-//public class MySqlConnectionPool {
-//	private static DataSource dataSource;
-//	private static final String JNDI_LOOKUP_SERVICE = "jbbc/DemoDB";
-//	
-//      //Connection connection;
-//     
-//   static
-//   {
-//	   
-//	   try {
-//		Context context =new InitialContext();
-//		Object lookup = context.lookup(JNDI_LOOKUP_SERVICE);
-//		if(lookup != null)
-//		{
-//			dataSource = (DataSource)lookup;
-//		}
-//	} catch (NamingException e) {
-//		// TODO Auto-generated catch block
-//		e.printStackTrace();
-//	}
-//	   
-//   }
-//
-//   public static DataSource getDataSource() 
-//   {
-//	   
-//	   return dataSource;	   
-//   }
-//
-
-//   public void insert(int EmpID, String EmpName, int EmpAge, String EmpDept)
-//	{
-//
-//		String values="'"+EmpID+"'"+","+"'"+EmpName+"'"+","+"'"+EmpAge+"'"+","+"'"+EmpDept+"'";
-//		String insertQuery="INSERT INTO DEMODB.EMPLOYEE VALUES ("+values+");";
-//		
-//		System.out.println(insertQuery);
-//		
-//	       
-//		
-//		try {
-//			Context context =new InitialContext();
-//			Object lookup = context.lookup(JNDI_LOOKUP_SERVICE);
-//			if(lookup != null)
-//			{
-//				dataSource = (DataSource)lookup;
-//			}
-//			Connection con=dataSource.getConnection();
-//			PreparedStatement ps=con.prepareStatement(insertQuery);
-//			ps.executeUpdate();
-//		} catch (SQLException | NamingException e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		}
-//		System.out.println("updated");
-//
-//		
-//	}
 public class MySqlConnectionPool{
 
 	private static  BasicDataSource ds = new BasicDataSource();
-	//Logger logger = (Logger) LoggerFactory.getLogger(getClass());
+	
 
 static {	
 	ds.setDriverClassName("com.mysql.jdbc.Driver");
